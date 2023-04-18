@@ -16,7 +16,8 @@ class HomePageActivity : AppCompatActivity() {
         val btnPushPermission = findViewById<Button>(R.id.button_ask_push_permission)
         // set on-click listener
         btnPushPermission.setOnClickListener {
-            Toast.makeText(this@HomePageActivity, "Asking for push permission", Toast.LENGTH_SHORT).show()
+            Braze.getInstance(this).changeUser("testing");
+            Toast.makeText(this@HomePageActivity, "Asking and changing for push permission", Toast.LENGTH_SHORT).show()
         }
 
         // get reference to button
