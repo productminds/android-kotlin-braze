@@ -28,39 +28,4 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintVertical_bias="0.186" />
 
-    <Button
-        android:id="@+id/button_ask_location_permission"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ask for location permission"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_ask_push_permission"
-        app:layout_constraintVertical_bias="0.232" />
-
-    <Button
-        android:id="@+id/button_ask_push_permission"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ask for push permission"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_end_session"
-        app:layout_constraintVertical_bias="0.286" />
-
-    <Button
-        android:id="@+id/button_end_session"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="End Session"
-        app:layout_constraintBottom_toTopOf="@+id/button_ask_push_permission"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_start_session" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

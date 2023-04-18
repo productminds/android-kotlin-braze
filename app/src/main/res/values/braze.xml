@@ -3,4 +3,7 @@
     <string name="com_braze_api_key">9c2a4d54-8ef1-47a0-a14a-a88dc66b0f86</string>
     <string translatable="false" name="com_braze_custom_endpoint">sdk.iad-06.braze.com</string>
     <integer name="com_braze_logger_initial_log_level">2</integer>
+    <bool translatable="false" name="com_braze_firebase_cloud_messaging_registration_enabled">true</bool>
+    <string translatable="false" name="com_braze_firebase_cloud_messaging_sender_id">858679832099</string>
+
 </resources>
