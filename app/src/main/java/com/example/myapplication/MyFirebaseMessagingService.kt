@@ -6,8 +6,10 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
+import com.braze.push.BrazeFirebaseMessagingService
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -18,9 +20,22 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     // show the notification
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
-        if(remoteMessage.getNotification() != null){
-            generateNotification(remoteMessage.notification!!.title!!, remoteMessage.notification!!.body!!) // !!: Null safe
+        if (BrazeFirebaseMessagingService.handleBrazeRemoteMessage(this, remoteMessage)) {
+            // This Remote Message originated from Braze and a push notification was displayed.
+            // No further action is needed.
+            Log.i("[info]","Receiving message from Braze")
+        } else {
+            // This Remote Message did not originate from Braze.
+            // No action was taken and you can safely pass this Remote Message to other handlers.
+            if(remoteMessage.getNotification() != null) {
+                generateNotification(
+                    remoteMessage.notification!!.title!!,
+                    remoteMessage.notification!!.body!!
+                ) // !!: Null safe
+                Log.i("[info]","Receiving message from Firebase")
+            }
         }
+        super.onMessageReceived(remoteMessage)
     }
 
     // attach the notification created with the custom layout
