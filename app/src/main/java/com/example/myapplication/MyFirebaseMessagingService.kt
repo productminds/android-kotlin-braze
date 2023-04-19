@@ -20,14 +20,22 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     // show the notification
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
-        super.onMessageReceived(remoteMessage)
         if (BrazeFirebaseMessagingService.handleBrazeRemoteMessage(this, remoteMessage)) {
             // This Remote Message originated from Braze and a push notification was displayed.
             // No further action is needed.
+            Log.i("[info]","Receiving message from Braze")
         } else {
             // This Remote Message did not originate from Braze.
             // No action was taken and you can safely pass this Remote Message to other handlers.
+            if(remoteMessage.getNotification() != null) {
+                generateNotification(
+                    remoteMessage.notification!!.title!!,
+                    remoteMessage.notification!!.body!!
+                ) // !!: Null safe
+                Log.i("[info]","Receiving message from Firebase")
+            }
         }
+        super.onMessageReceived(remoteMessage)
     }
 
     // attach the notification created with the custom layout
