@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.example.myapplication'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.myapplication"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -47,4 +47,5 @@ dependencies {
     implementation "com.google.firebase:firebase-core:+"
     implementation "com.google.firebase:firebase-messaging:+"
     implementation platform('com.google.firebase:firebase-bom:31.5.0')
+    implementation 'com.amplitude:analytics-android:1.+'
 }

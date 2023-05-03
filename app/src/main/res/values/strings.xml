@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Product Minds</string>
+    <string name="login">Log In</string>
+    <string name="welcome">Welcome</string>
+    <string name="password">Password</string>
+    <string name="high_value_action">High Value Action</string>
+    <string name="purchase">Make Purchase</string>
 </resources>
